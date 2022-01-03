@@ -1,0 +1,7 @@
+{
+  "name": "nsi-web",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
