@@ -10,9 +10,9 @@ export class AppComponent implements OnInit {
 
   showMenu = false;
   public appPages = [
-    { title: 'Full-Text', url: '/search/full-text', icon: 'document-text'},
-    { title: 'Geo', url: '/login', icon: 'document-text'},
-    { title: 'Date', url: '/login', icon: 'document-text'}
+    { title: 'Full-Text', url: '/search/full-text' },
+    { title: 'Geo', url: '/search/geo' },
+    { title: 'Date', url: '/search/date' }
   ];
 
   constructor(private router: Router) {}
@@ -24,7 +24,8 @@ export class AppComponent implements OnInit {
   showSideMenu() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.showMenu = !(this.router.url === '/login');
+        this.showMenu = !(this.router.url === '/login' || this.router.url === '/register');
+        this.showMenu = true;
       }
     });
   }

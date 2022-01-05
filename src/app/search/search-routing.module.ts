@@ -5,6 +5,14 @@ const routes: Routes = [
   {
     path: 'full-text',
     loadChildren: () => import('./pages/full-text/full-text.module').then( m => m.FullTextPageModule)
+  },
+  {
+    path: 'geo',
+    loadChildren: () => import('./pages/geo/geo.module').then( m => m.GeoPageModule)
+  },
+  {
+    path: 'date',
+    loadChildren: () => import('./pages/date/date.module').then( m => m.DatePageModule)
   }
 ];
 

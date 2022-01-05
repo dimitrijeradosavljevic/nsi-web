@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../../services/search.service';
 
 @Component({
-  selector: 'app-full-text',
-  templateUrl: './full-text.page.html',
-  styleUrls: ['./full-text.page.scss'],
+  selector: 'app-geo',
+  templateUrl: './geo.page.html',
+  styleUrls: ['./geo.page.scss'],
 })
-export class FullTextPage implements OnInit {
+export class GeoPage implements OnInit {
 
   constructor(private searchService: SearchService) { }
 
