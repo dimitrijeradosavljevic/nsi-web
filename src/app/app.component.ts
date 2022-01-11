@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   showMenu = false;
   public appPages = [
     { title: 'Full-Text', url: '/search/full-text' },
-    { title: 'Geo', url: '/search/geo' },
+    { title: 'Location-Search', url: '/search/location-search' },
     { title: 'Date', url: '/search/date' }
   ];
 
@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.showMenu = !(this.router.url === '/login' || this.router.url === '/register');
-        this.showMenu = true;
+        // this.showMenu = true;
       }
     });
   }

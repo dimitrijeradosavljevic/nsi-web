@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from "@angular/router";
 
 @Component({
   selector:    'app-login',
@@ -13,7 +14,8 @@ export class LoginPage implements OnInit {
   submitted = false;
   isAuthenticatingIndicator = false;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -37,6 +39,11 @@ export class LoginPage implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
+
+    localStorage.setItem('username', this.loginForm.controls.email.value);
+    localStorage.setItem('password', this.loginForm.controls.password.value);
+
+    this.router.navigate(['/search/full-text']);
   }
 
   ionViewDidLeave() {

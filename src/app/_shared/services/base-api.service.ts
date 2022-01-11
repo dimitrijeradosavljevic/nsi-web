@@ -14,7 +14,7 @@ export class BaseApiService {
   constructor(protected http: HttpClient,
               protected router: Router) {
 
-    this.apiUrl = environment.baseUrl;
+    this.apiUrl = `${environment.baseUrl}/php-elasticsearch-monolith/v1`;
   }
 
   public handleError(response: any) {

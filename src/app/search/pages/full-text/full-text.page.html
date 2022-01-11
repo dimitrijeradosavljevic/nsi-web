@@ -6,27 +6,41 @@
 
 <ion-content>
 
-  <ion-row class="ion-margin-top">
-    <ion-col size="6" offset="3">
-      <ion-item>
-        <ion-input placeholder="Upit"></ion-input>
-      </ion-item>
-    </ion-col>
-  </ion-row>
+  <form [formGroup]="form" (ngSubmit)="search()" *ngIf="formActive">
+    <ion-row class="ion-margin-top">
+      <ion-col size="4" offset="2">
+        <ion-item>
+          <ion-label>Filed</ion-label>
+          <ion-input formControlName="field"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="4">
+        <ion-item>
+          <ion-label>Value</ion-label>
+          <ion-input formControlName="value"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
 
-  <ion-row>
-    <ion-col class="ion-text-center">
-      <ion-button color="primary">Execute</ion-button>
-    </ion-col>
-  </ion-row>
+    <ion-row class="ion-margin-top">
+      <ion-col class="ion-text-center">
+        <ion-button type="submit" color="primary">Execute</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
 
   <ion-row class="ion-margin-top">
     <ion-col size="6" class="ion-text-center">
       <ion-text><h1>Elasticsearch</h1></ion-text>
+      <ion-text *ngIf="result">Time: {{ result.data.elastic.time }}</ion-text><br>
+      <ion-text *ngIf="result">Results: {{ result.data.elastic.results }}</ion-text>
     </ion-col>
     <ion-col size="6" class="ion-text-center">
       <ion-text><h1>MySql</h1></ion-text>
+      <ion-text *ngIf="result">Time: {{ result.data.mysql.time }}</ion-text><br>
+      <ion-text *ngIf="result">Results: {{ result.data.mysql.results }}</ion-text>
     </ion-col>
   </ion-row>
+
 
 </ion-content>

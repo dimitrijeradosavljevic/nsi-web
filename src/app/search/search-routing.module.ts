@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/full-text/full-text.module').then( m => m.FullTextPageModule)
   },
   {
-    path: 'geo',
+    path: 'location-search',
     loadChildren: () => import('./pages/geo/geo.module').then( m => m.GeoPageModule)
   },
   {
